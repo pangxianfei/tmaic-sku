@@ -1,6 +1,7 @@
 {
     "name": "tmaic/tmaic-sku",
     "description": "tmaic-sku",
+    "license": "MIT",
     "type": "library",
     "authors": [
         {
