@@ -2,9 +2,9 @@
 
 namespace Tmaic\TmaicSku\Traits;
 
-use Tmaic\Tmiac\Contracts\AttrContract;
-use Tmaic\Tmiac\Contracts\OptionContract;
-use Tmaic\Tmiac\Models\Sku;
+use Tmaic\TmaicSku\Contracts\AttrContract;
+use Tmaic\TmaicSku\Contracts\OptionContract;
+use Tmaic\TmaicSku\Models\Sku;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Arr;
