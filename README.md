@@ -39,11 +39,11 @@ php artisan vendor:publish --tag=tmaic-sku-config
 
 ### #使用
 
-**在商品模型中引入`Tmaic\Tmiac\Traits\HasSku`Trait**
+**在商品模型中引入`Tmaic\TmaicSku\Traits\HasSku`Trait**
 
 ```php
 use Illuminate\Database\Eloquent\Model;
-use Tmaic\Tmiac\Traits\HasSku;
+use Tmaic\TmaicSku\Traits\HasSku;
 
 class Product extends Model
 {
@@ -56,7 +56,7 @@ class Product extends Model
 **选项新增**
 
 ```php
-use Tmaic\Tmiac\Models\Option;
+use Tmaic\TmaicSku\Models\Option;
 Option::create(['name' => '尺寸']);
 ```
 
@@ -120,7 +120,7 @@ $product->syncSkuWithAttrs([$attr1, $attr2, $attr3], ['amount' => 5000, 'stock' 
 **获取SKU**
 
 ```php
-use Tmaic\Tmiac\Models\Sku;
+use Tmaic\TmaicSku\Models\Sku;
 // 通过属性值组合获取sku
 $sku = Sku::findByPosition($attr1, $attr2);
 // 获取产品sku实例
@@ -137,7 +137,7 @@ $product->skus()->delete();
 **通过属性值组合获取SKU**
 
 ```php
-use Tmaic\Tmiac\Models\Sku;
+use Tmaic\TmaicSku\Models\Sku;
 Sku::findByPosition([$attr1, $attr2, $attr3])
 ```
 
@@ -157,28 +157,23 @@ $sku->removeAttrs([$attr1, $attr2])
 **完整示例**
 ```php
 // 创建产品
-$product = Product::create(['title' => 'phone']);
-
-// 基础属性
-$product->addAttrValues('屏幕尺寸', ['5.5', '9.9', '4.4']);
-$product->addAttrValues('运营商', ['移动', '联通', '电信']);
-$product->addAttrValues('CPU型号', ['骁龙730G', '麒麟960', '联发科']);
+$product = Goods::create(['GoodsName' => 'phone 11 Pro Max']);
 
 // 准备作为sku属性
-$colorAttrs = $product->addAttrValues('机身颜色', ['深空灰', '深蓝']);
-$Capattrs = $product->addAttrValues('存储容量', ['6GB', '8GB']);
+$colorAttrs = $product->addAttrValues('选择外观', ['深空灰', '银色']);
+$capacity  = $product->addAttrValues('存储容量', ['128GB', '256GB']);
 
 // 获取属性值实例
 $black = $colorAttrs->firstWhere('value', '黑色');
 $white = $colorAttrs->firstWhere('value', '白色');
-$sixGB = $Capattrs->firstWhere('value', '6GB');
-$eightGB = $Capattrs->firstWhere('value', '8GB');
+$siz128GB = $capacity->firstWhere('value', '128GB');
+$siz256GB = $capacity->firstWhere('value', '256GB');
 
 // 组合属性值，建立sku
-$product->syncSkuWithAttrs([$black, $sixGB], ['amount' => 2999, 'stock' => 100]);
-$product->syncSkuWithAttrs([$black, $eightGB], ['amount' => 2999, 'stock' => 100]);
-$product->syncSkuWithAttrs([$white, $sixGB], ['amount' => 2999, 'stock' => 100]);
-$product->syncSkuWithAttrs([$white, $eightGB], ['amount' => 2999, 'stock' => 100]);
+$product->syncSkuWithAttrs([$black, $siz128GB], ['amount' => 12699, 'stock' => 100]);
+$product->syncSkuWithAttrs([$black, $siz256GB], ['amount' => 12699, 'stock' => 100]);
+$product->syncSkuWithAttrs([$white, $siz128GB], ['amount' => 12699, 'stock' => 100]);
+$product->syncSkuWithAttrs([$white, $siz256GB], ['amount' => 12699, 'stock' => 100]);
 
 // 获取商品及商品SKU数据
 $product = $product->load('skus.attrs.option');
