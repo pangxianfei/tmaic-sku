@@ -1,6 +1,6 @@
 <?php
 
-namespace Tmaic\Tmiac;
+namespace Tmaic\TmiacSku;
 
 use Illuminate\Support\Collection;
 use Illuminate\Filesystem\Filesystem;
