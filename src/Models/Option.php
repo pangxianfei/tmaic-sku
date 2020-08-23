@@ -1,8 +1,8 @@
 <?php
 
-namespace Tmaic\Tmiac\Models;
+namespace Tmaic\TmaicSku\Models;
 
-use Tmaic\Tmiac\Contracts\OptionContract;
+use Tmaic\TmaicSku\Contracts\OptionContract;
 use Illuminate\Database\Eloquent\Model;
 
 class Option extends Model implements OptionContract

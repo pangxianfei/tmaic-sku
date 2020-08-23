@@ -31,24 +31,24 @@ return [
      */
     'models' => [
         /*
-         * sku模型，需实现 Tmaic\Tmiac\Contracts\SkuContract
+         * sku模型，需实现 Tmaic\TmaicSku\Contracts\SkuContract
          */
-        'Sku' => \Tmaic\Tmiac\Models\Sku::class,
+        'Sku' => \Tmaic\TmaicSku\Models\Sku::class,
 
         /*
-         * 选项模型，需实现 Tmaic\Tmiac\Contracts\OptionContract
+         * 选项模型，需实现 Tmaic\TmaicSku\Contracts\OptionContract
          */
-        'Option' => \Tmaic\Tmiac\Models\Option::class,
+        'Option' => \Tmaic\TmaicSku\Models\Option::class,
 
         /*
-         * 属性值模型,需实现 Tmaic\Tmiac\Contracts\AttrContract
+         * 属性值模型,需实现 Tmaic\TmaicSku\Contracts\AttrContract
          */
-        'Attr' => \Tmaic\Tmiac\Models\Attr::class,
+        'Attr' => \Tmaic\TmaicSku\Models\Attr::class,
 
         /*
          * 属性与SKU多对多中间模型
          */
-        'AttrSku' => \Tmaic\Tmiac\Models\AttrSku::class,
+        'AttrSku' => \Tmaic\TmaicSku\Models\AttrSku::class,
     ],
 
     /*

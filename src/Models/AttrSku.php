@@ -1,6 +1,6 @@
 <?php
 
-namespace Tmaic\Tmiac\Models;
+namespace Tmaic\TmaicSku\Models;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 

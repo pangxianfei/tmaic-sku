@@ -1,6 +1,6 @@
 <?php
 
-namespace Tmaic\Tmiac\Contracts;
+namespace Tmaic\TmiacSku\Contracts;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;

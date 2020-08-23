@@ -1,9 +1,9 @@
 <?php
 
-namespace Tmaic\Tmiac\Models;
+namespace Tmaic\TmaicSku\Models;
 
-use Tmaic\Tmiac\Contracts\AttrContract;
-use Tmaic\Tmiac\Contracts\SkuContract;
+use Tmaic\TmaicSku\Contracts\AttrContract;
+use Tmaic\TmaicSku\Contracts\SkuContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tmaic\Tmiac\Contracts;
+namespace Tmaic\TmaicSku\Contracts;
 
 interface OptionContract
 {

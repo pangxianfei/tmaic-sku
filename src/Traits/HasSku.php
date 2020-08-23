@@ -1,6 +1,6 @@
 <?php
 
-namespace Tmaic\Tmiac\Traits;
+namespace Tmaic\TmaicSku\Traits;
 
 use Tmaic\Tmiac\Contracts\AttrContract;
 use Tmaic\Tmiac\Contracts\OptionContract;
