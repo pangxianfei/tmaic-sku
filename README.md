@@ -53,6 +53,17 @@ class Product extends Model
 
 ---
 
+**注意事项**
+如果报以下错误
+
+SQLSTATE[42000]: Syntax error or access violation: 1463 Non-grouping field 'attrs_count' is used in HAVING clause (SQL: select `skus`.*, (select count(*) from `attrs` inner join `attr_sku` on `attrs`.`id` = `attr_sku`.`attr_id` where `skus`.`id` = `attr_sku`.`sku_id`) as `attrs_count` from `skus` where `id` in (select `sku_id` from `attr_sku` where `sku_id` in (select `sku_id` from `attr_sku` where `attr_id` in (79, 84))) having `attrs_count` = 2 limit 1)
+
+需要在 config/database.php 下的配置：如下
+
+'strict' => false,
+
+将 strict 改为 false
+
 **选项新增**
 
 ```php
