@@ -16,7 +16,7 @@
 **引入**
 
 ```bash
-composer require tmaic/tmaic-sku
+composer require tmaic/tmaic-sku v1.0.4
 ```
 
 **发布迁移文件**
